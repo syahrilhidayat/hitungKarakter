@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hitung Karakter Yang Diselect</title>
+</head>
+<body>
+	<div id="content" onmouseup="countSelectionText()">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+		<b>Hello World</b>
+		</p>
+	</div>
+	<div id="info"></div>
+
+	<script type="text/javascript">
+		const info = document.getElementById("info");
+
+		function countSelectionText(){
+			if (window.getSelection) {
+				var string = window.getSelection().toString();
+
+				info.innerHTML = 'text : <strong>' + string + '</strong>';
+				info.innerHTML += 'Total Karakter : <strong>' + string.length + '</striong>';
+				info.classList.toggle("active");
+			}else{
+				info.classList.toggle("active");
+			}
+		}
+	</script>
+</body>
+</html>
